@@ -5,7 +5,6 @@
 
 body {
   background-image: url("/img/131338.png");
-  background-size: cover;
   background-position: center center;
   font: 20px Microgamma, sans-serif;
 }
@@ -22,24 +21,25 @@ h1 {
 }
 
 .gallery-stei>ul {
-  margin-bottom: 0;
-  padding-left: 15px;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 0;
 }
 
 .gallery-stei>ul>li {
-  margin-bottom: 15px;
-  width: 180px;
-  display: inline-block;
-  margin-right: 15px;
+  height: 100%;
   list-style: outside none none;
 }
 
 .gallery-stei>ul>li a {
   border: 3px solid #FFF;
   border-radius: 3px;
-  display: block;
+  height: 100%;
   overflow: hidden;
-  position: relative;
   float: left;
 }
 
