@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Microgamma';
+  src: url('/fonts/microgamma.otf');
+}
+
+body {
+  background-image: url("/img/131338.png");
+  background-size: cover;
+  background-position: center center;
+  font: 20px Microgamma, sans-serif;
+}
+
+h1 {
+  color: white;
+  margin: 5px;
+  text-align: center;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-stei>ul {
+  margin-bottom: 0;
+  padding-left: 15px;
+}
+
+.gallery-stei>ul>li {
+  margin-bottom: 15px;
+  width: 180px;
+  display: inline-block;
+  margin-right: 15px;
+  list-style: outside none none;
+}
+
+.gallery-stei>ul>li a {
+  border: 3px solid #FFF;
+  border-radius: 3px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.gallery-stei>ul>li a:hover {
+  border: 3px solid skyblue;
+}
+
+.gallery-stei>ul>li a>img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-stei>ul>li a:hover>img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.lg-download {
+  width: 85px !important;
+}
+
+.lg-icon>span {
+  font-size: 14px;
+}
