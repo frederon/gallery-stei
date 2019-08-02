@@ -375,6 +375,7 @@
         }, this.s.backdropDuration);
 
         if (this.s.download) {
+            this.$outer.find('.lg-toolbar').append('<a id="lg-download-frame" target="_blank" download class="lg-download lg-download lg-icon"><span>Frame</span></a>');
             this.$outer.find('.lg-toolbar').append('<a id="lg-download" target="_blank" download class="lg-download lg-icon"><span>Normal</span></a>');
             this.$outer.find('.lg-toolbar').append('<a id="lg-download-full" target="_blank" download class="lg-download lg-download lg-icon"><span>Full</span></a>');
         }
@@ -800,6 +801,7 @@
                 if (_src) {
                     $('#lg-download').attr('href', _src);
                     $('#lg-download-full').attr('href', _src + '?full=true');
+                    $('#lg-download-frame').attr('href', "frame/?image=" + _src.substring(0, _src.length-2) + "30");
                     _this.$outer.removeClass('lg-hide-download');
                 } else {
                     _this.$outer.addClass('lg-hide-download');
