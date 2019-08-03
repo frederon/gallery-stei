@@ -4,7 +4,7 @@ block content
   div#header
     h1 CHEAT
     h1 STEI ITB 2019
-  img#logo(src="img/logoregis-small-white.png")
+  img#logo(src="../img/logoregis-small-white.png")
   #search-form
     form(action="/search" enctype="multipart/form-data" method="post")
       input(type="file" name="ref")
@@ -12,6 +12,6 @@ block content
   div.gallery-stei
     ul#lightgallery
       each image in images
-        li(data-src=`thumb/${image}/25` full=`images/${image}`)
+        li(data-src=`../thumb/${image}/25` full=`../images/${image}`)
           a(href)
-            img(src=`thumb/${image}/5`)
+            img(src=`../thumb/${image}/5`)

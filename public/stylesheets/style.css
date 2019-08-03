@@ -70,3 +70,11 @@ h1 {
 .lg-icon>span {
   font-size: 14px;
 }
+
+#reference {
+  display: none;
+}
+
+#searching {
+  display: none;
+}

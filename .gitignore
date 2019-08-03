@@ -90,3 +90,9 @@ typings/
 # Photos
 public/images/*.JPG
 public/images/**/.JPG
+
+# Models
+public/models/*
+
+# Reference Image
+public/refImages/*
