@@ -6,12 +6,16 @@ block content
     h1 STEI ITB 2019
   img#logo(src="img/logoregis-small-white.png")
   #search-form
+    p Search with your face
     form(action="/search" enctype="multipart/form-data" method="post")
       input(type="file" name="ref")
       input(type="submit" value="Upload")
+  p This may take a while.. Searching your face
+  div.meter.animate
+    span(style="width: 0%")
+      span
   div.gallery-stei
     ul#lightgallery
-  p This may take a while
   img#reference(src=reference data=refData)
   img#searching(src="/images/2.JPG" data=results)
   

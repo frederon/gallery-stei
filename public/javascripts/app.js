@@ -40,6 +40,7 @@ $(document).ready(function() {
             resImages.push(images[i]);
           };
         }
+        $('.meter span:first-child').css('width', i / images.length * 100 + "%");
       }
       saveToJSON(resImages);
     }

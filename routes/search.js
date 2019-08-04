@@ -5,7 +5,7 @@ var fs = require("fs");
 var upload = require("multer")({ dest: "./public/refImages" });
 var c = require("../config");
 
-/* GET Reference Image. */
+/* POST Reference Image. */
 router.post("/", upload.single("ref"), function (req, res, next) {
   if (!req.file) {
     return next(createError(400, 'Please upload your selfie to search'));
@@ -32,8 +32,11 @@ router.post("/:id", function (req, res, next) {
   }); 
 });
 
-router.get("/:id", function(req, res, next) {
-  res.render("search-id", {
+router.get("/:id", function (req, res, next) {
+  if (!fs.existsSync(`./public/refImages/${req.params.id}.json`)) {
+    return next(createError(404, "Your search result is not found"))
+  }
+  res.render("search-results", {
     title: "STEI 2019 - Regis Studio",
     images: JSON.parse(fs.readFileSync(`./public/refImages/${req.params.id}.json`))
   });
