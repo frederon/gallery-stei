@@ -10,7 +10,7 @@ router.get("/", function(req, res, next) {
         next(createError(400));
     }
     jimp.read(c.imgDir + "/frame.jpg").then(frame => {
-      jimp.read(c.imgDir + "/cheat.png").then(cheat => {
+      jimp.read(c.imgDir + "/cheat.jpg").then(cheat => {
         jimp.read(c.domain + req.query.image).then(async function(foto) {
           foto.scaleToFit(1795, 1205);
           frame.composite(foto, 119, 123);
