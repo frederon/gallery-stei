@@ -38,6 +38,7 @@ router.get("/:id", function (req, res, next) {
   }
   res.render("search-results", {
     title: "STEI 2019 - Regis Studio",
+    refname: req.params.id,
     images: JSON.parse(fs.readFileSync(`./public/refImages/${req.params.id}.json`))
   });
 });

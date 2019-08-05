@@ -49,7 +49,9 @@ $(document).ready(function() {
   function showImage(image) {
     console.log("show image" + image)
     let lightgallery = $("#lightgallery");
-    lightgallery.append(`<li data-source="thumb/${image}/25" full="images/${image}"><a href><img src="thumb/${image}/5"></a></li>`);
+    lightgallery.append(
+      `<li data-source="thumb/${image}/25" full="images/${image}"><a href><img class="placeholder" data-src="thumb/${image}/5" src="img/placeholder.jpg"></a></li>`
+    );
   }
   function saveToJSON(images) {
     $.ajax({
@@ -69,4 +71,7 @@ $(document).ready(function() {
       url: "/search/" + $("#reference").attr("data")
     });
   }
+  var lazyLoadInstance = new LazyLoad({
+    elements_selector: ".placeholder"
+  });
 });

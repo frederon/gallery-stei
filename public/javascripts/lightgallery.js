@@ -801,7 +801,7 @@
                 if (_src) {
                     $('#lg-download').attr('href', _src);
                     $('#lg-download-full').attr('href', _src + '?full=true');
-                    $('#lg-download-frame').attr('href', "frame/?image=" + _src.substring(0, _src.length-2).replace("../", "") + "30");
+                    $('#lg-download-frame').attr('href', "../frame/?image=" + _src.substring(0, _src.length-2).replace("../", "") + "30");
                     _this.$outer.removeClass('lg-hide-download');
                 } else {
                     _this.$outer.addClass('lg-hide-download');
