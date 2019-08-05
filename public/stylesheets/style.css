@@ -3,6 +3,10 @@
   src: url('/fonts/microgamma.otf');
 }
 
+@-ms-viewport {
+  width: device-width;
+}
+
 body {
   background-image: url("/img/background.jpg");
   background-position: center center;
