@@ -8,7 +8,6 @@ var app = require('../app');
 var debug = require('debug')('gallery-stei:server');
 var http = require('http');
 var https = require('https');
-var fs = require('fs');
 
 // Certificate
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.stei.regis.studio/privkey.pem', 'utf8');
