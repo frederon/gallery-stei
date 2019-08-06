@@ -7,18 +7,6 @@
 var app = require('../app');
 var debug = require('debug')('gallery-stei:server');
 var http = require('http');
-var https = require('https');
-
-// Certificate
-const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.stei.regis.studio/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/www.stei.regis.studio/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/www.stei.regis.studio/chain.pem', 'utf8');
-
-const credentials = {
-  key: privateKey,
-  cert: certificate,
-  ca: ca
-};
 
 /**
  * Get port from environment and store in Express.
@@ -28,15 +16,10 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP and HTTPS server.
+ * Create HTTP server.
  */
 
 var server = http.createServer(app);
-var httpsServer = https.createServer(app);
-
-httpsServer.listen(443, () => {
-  console.log("HTTPS Server running on port 443");
-});
 
 /**
  * Listen on provided port, on all network interfaces.
