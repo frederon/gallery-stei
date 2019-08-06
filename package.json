@@ -13,6 +13,7 @@
     "express": "~4.16.1",
     "face-api.js": "^0.20.1",
     "http-errors": "~1.6.3",
+    "https": "^1.0.0",
     "image-thumbnail": "^1.0.4",
     "jimp": "^0.6.4",
     "jquery": "^3.4.1",
