@@ -50,7 +50,7 @@ $(document).ready(function() {
     console.log("show image" + image)
     let lightgallery = $("#lightgallery");
     lightgallery.append(
-      `<li data-source="thumb/${image}/25" full="images/${image}"><a href><img class="placeholder" data-src="thumb/${image}" src="img/placeholder.jpg"></a></li>`
+      `<li data-source="thumb/${image}/25" full="images/${image}"><a href><img src="thumb/${image}"></a></li>`
     );
   }
   function saveToJSON(images) {
