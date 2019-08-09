@@ -9,45 +9,49 @@ $(document).ready(function() {
       await faceapi.nets.faceLandmark68Net.loadFromUri("/models");
       await faceapi.nets.faceRecognitionNet.loadFromUri("/models");
 
-      const results = await faceapi
+      const referenceResult = await faceapi
         .detectAllFaces("reference")
         .withFaceLandmarks()
         .withFaceDescriptors();
 
-      if (!results.length) {
+      if (!referenceResult.length) {
         return;
       }
 
-      const faceMatcher = new faceapi.FaceMatcher(results);
+      //const faceMatcher = new faceapi.FaceMatcher(referenceResult);
       let images = JSON.parse($("#searching").attr("data"));
       let resImages = [];
       for (let i = 0; i < images.length; i++) {
         searching.attr("src", "thumb/" + images[i] + "/25");
         console.log("searching " + images[i]);
-        const singleResult = await faceapi
-          .detectSingleFace("searching")
+        const queryResults = await faceapi
+          .detectAllFaces("searching")
           .withFaceLandmarks()
-          .withFaceDescriptor();
+          .withFaceDescriptors();
 
-        if (singleResult) {
-          const bestMatch = faceMatcher.findBestMatch(
-            singleResult.descriptor
+        for (let j = 0; j < queryResults.length; j++) {
+          let fd = queryResults[j].descriptor;
+          const distance = faceapi.euclideanDistance(
+            referenceResult[0].descriptor,
+            fd
           );
-          if(parseFloat(
-              bestMatch.toString().substring(bestMatch.toString().length - 4)
-            ) <= 0.45) {
+          if (distance <= 0.45) {
             showImage(images[i]);
             resImages.push(images[i]);
-          };
+            j = queryResults.length;
+          }
         }
-        $('.meter span:first-child').css('width', i / images.length * 100 + "%");
+        $(".meter span:first-child").css(
+          "width",
+          (i / images.length) * 100 + "%"
+        );
       }
       saveToJSON(resImages);
     }
     detect();
   }
   function showImage(image) {
-    console.log("show image" + image)
+    console.log("show image" + image);
     let lightgallery = $("#lightgallery");
     lightgallery.append(
       `<li data-source="thumb/${image}/25" full="images/${image}"><a href><img src="thumb/${image}"></a></li>`
