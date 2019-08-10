@@ -96,3 +96,6 @@ public/models/*
 
 # Reference Image
 public/refImages/*
+
+# Videos
+public/videos/*

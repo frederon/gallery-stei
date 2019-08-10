@@ -4,14 +4,6 @@ html
     title= title
     meta(name="viewport" content="width=device-width, initial-scale=1")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
-    script(src="/javascripts/lightgallery.js")
-    script(src="/javascripts/lg-thumbnail.js")
-    script(src="/javascripts/lg-zoom.js")
-    script(src="/javascripts/lg-pager.js")
-    script(src="/javascripts/lg-fullscreen.js")
-    script(src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js")
-    script(src='/javascripts/app.js')
-    link(rel='stylesheet', href='/stylesheets/lightgallery.css') 
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    include ./scripts.pug
   body
     block content

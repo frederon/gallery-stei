@@ -23,6 +23,11 @@ h1 {
   text-align: center;
 }
 
+p {
+  color: white;
+  text-align: center;
+}
+
 #logo {
   display: block;
   margin: 0 auto;
@@ -101,6 +106,7 @@ h1 {
 }
 
 #search-form p {
+  color: black;
   display: block;
 }
 
@@ -136,6 +142,10 @@ h1 + a {
   margin: 0 auto;
 }
 
+h1 > a {
+  color: white;
+}
+
 #search-form ~ p {
   color: white;
   margin-bottom: 0;
@@ -146,6 +156,11 @@ p > img {
   display: block;
   margin: 10px auto;
   width: 120px;
+}
+
+.container {
+  margin: 50px auto;
+  max-width: 500px;
 }
 
 .meter {
