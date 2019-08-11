@@ -6,11 +6,7 @@ block content
       a(href="/") CHEAT
     h1 STEI ITB 2019
   img#logo(src="img/logoregis-small-white.png")
-  #search-form
-    p Search with your face
-    form(action="/search" enctype="multipart/form-data" method="post")
-      input(type="file" name="ref")
-      input(type="submit" value="Upload")
+  include ./search-form.pug
   div.container
     p Aftermovie
     video(controls playsinline poster="images/IMG_0243.JPG")
