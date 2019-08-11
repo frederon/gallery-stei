@@ -23,7 +23,9 @@ require("greenlock-express")
     configDir: "~/.config/acme/",
 
     // Get notified of important updates and help me make greenlock better
-    communityMember: false
+    communityMember: false,
+
+    app: require("../app")
 
     //, debug: true
   })
