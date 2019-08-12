@@ -8,9 +8,14 @@ block content
   img#logo(src="img/logoregis-small-white.png")
   include ./search-form.pug
   div.container
-    p Aftermovie
-    video(controls playsinline poster="images/IMG_0243.JPG")
-      source(src="videos/aftermovie540.mp4" type="video/mp4" size="540")
+    div.movie
+      p Short Aftermovie
+      video#v-short(controls playsinline poster="images/IMG_0243.JPG")
+        source(src="videos/aftermovie-short.mp4" type="video/mp4" size="540")
+    div.movie
+      p Long Aftermovie
+      video#v-long(controls playsinline poster="images/IMG_0243.JPG")
+        source(src="videos/aftermovie-long.mp4" type="video/mp4" size="540")
   div.gallery-stei
     ul#lightgallery
       each image in images

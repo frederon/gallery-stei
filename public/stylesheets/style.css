@@ -166,8 +166,18 @@ p > img {
 }
 
 .container {
-  margin: 50px auto;
-  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.movie {
+  margin: 0 30px;
+  max-width: 540px;
+}
+
+.movie .plyr {
+  width: 540px;
+  height: 303px;
 }
 
 .meter {

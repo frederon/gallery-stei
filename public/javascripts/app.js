@@ -88,5 +88,9 @@ $(document).ready(function() {
     elements_selector: ".placeholder"
   });
   
-  const player = new Plyr("video");
+  //const playerShort = new Plyr("#v-short");
+  const playerLong = new Plyr("#v-long", {
+    ratio: "16:9"
+  });
+  const playerShort = new Plyr("#v-short");
 });
